@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgi0qr5hsc57e"]
+
+[ext_resource type="Script" path="res://state_test.gd" id="1_63hj0"]
+[ext_resource type="Script" path="res://StateMachine.gd" id="2_pvq1v"]
+[ext_resource type="Script" path="res://idle.gd" id="3_kqjb5"]
+[ext_resource type="Script" path="res://run.gd" id="4_aw3m6"]
+
+[node name="state_test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_63hj0")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_pvq1v")
+
+[node name="idle" type="Node" parent="Node"]
+script = ExtResource("3_kqjb5")
+
+[node name="run" type="Node" parent="Node"]
+script = ExtResource("4_aw3m6")
