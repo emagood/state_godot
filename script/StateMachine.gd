@@ -1,4 +1,6 @@
-# StateMachine.gd
+'''
+maquina de estados padre , sus hijos son otros estados administrados aqui
+'''
 extends Node
 
 # Lista de estados

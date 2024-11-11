@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgi0qr5hsc57e"]
+
+[ext_resource type="Script" path="res://script/state_test.gd" id="1_4fmp3"]
+[ext_resource type="Script" path="res://script/rich_text_label.gd" id="2_ooxcy"]
+[ext_resource type="Script" path="res://script/StateMachine.gd" id="3_hm264"]
+[ext_resource type="Script" path="res://script/idle.gd" id="4_ktgxt"]
+[ext_resource type="Script" path="res://script/run.gd" id="5_mp5wy"]
+
+[node name="state_test" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4fmp3")
+
+[node name="test_scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+
+[node name="test_debug" type="RichTextLabel" parent="test_scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = true
+threaded = true
+script = ExtResource("2_ooxcy")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("3_hm264")
+
+[node name="idle" type="Node" parent="Node"]
+script = ExtResource("4_ktgxt")
+
+[node name="run" type="Node" parent="Node"]
+script = ExtResource("5_mp5wy")
