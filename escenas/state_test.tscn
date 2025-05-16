@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cgi0qr5hsc57e"]
 
-[ext_resource type="Script" path="res://script/state_test.gd" id="1_4fmp3"]
-[ext_resource type="Script" path="res://script/rich_text_label.gd" id="2_ooxcy"]
-[ext_resource type="Script" path="res://script/StateMachine.gd" id="3_hm264"]
-[ext_resource type="Script" path="res://script/idle.gd" id="4_ktgxt"]
-[ext_resource type="Script" path="res://script/run.gd" id="5_mp5wy"]
+[ext_resource type="Script" uid="uid://bywmwlkhmys1w" path="res://script/state_test.gd" id="1_4fmp3"]
+[ext_resource type="Script" uid="uid://b4eotn5sph6sf" path="res://script/rich_text_label.gd" id="2_ooxcy"]
+[ext_resource type="Script" uid="uid://denqbu8vwc2i3" path="res://script/StateMachine.gd" id="3_hm264"]
+[ext_resource type="Script" uid="uid://dv0xyiey4irc6" path="res://script/idle.gd" id="4_ktgxt"]
+[ext_resource type="Script" uid="uid://cybk63yom1kal" path="res://script/run.gd" id="5_mp5wy"]
 
 [node name="state_test" type="Control"]
 clip_contents = true

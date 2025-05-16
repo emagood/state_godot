@@ -22,6 +22,8 @@ func _input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_P):# En algún otro script o evento
 		update_text()
 		scroll_to_line(get_line_count())
+	if Input.is_key_pressed(KEY_X):# En algún otro script o evento
+		queue_free()
 
 func update_text():
 	text = ""
@@ -60,4 +62,10 @@ func update_text():
 		
 func _notification(what):
 	if what == NOTIFICATION_PREDELETE:
-		print("Goodbye!")
+		prints("Goodbye!")
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		prints("Goodbye! WINDOWS QUIT")
+
+
+func _exit_tree() -> void:
+	prints("adios nodo")
