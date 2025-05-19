@@ -5,13 +5,14 @@ este script solo es un debug de las propiedades del nodo
 
 extends RichTextLabel
 
-
-
+@export var nodes := Node
+var scrip = null
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
 	pass#update_text()
 
 func _ready():
+	#scrip = set_script(nodes)
 	#var thisScript: GDScript = $"../Node".get_script()
 	#var dic_metodo = thisScript.get_signal_list()
 	#prints(dic_metodo)
@@ -27,11 +28,11 @@ func _input(event: InputEvent) -> void:
 
 func update_text():
 	text = ""
-	
-	var thisScript: GDScript = $"../..".get_script()
+
+	var thisScript: GDScript = $"../../AnimationPlayer".get_script()
 	for propertyInfo in thisScript.get_method_list():
 		var propertyName : String = propertyInfo.name
-		var propertyValue = $"../..".get(propertyName)
+		var propertyValue = $"../../AnimationPlayer".get(propertyName)
 		var propertyType = propertyInfo.args
 		var propertyReturn = propertyInfo.default_args
 		text += "[color=green]%s:[/color] %s\n" % [propertyName + " " +  str(propertyReturn), propertyValue ,] if !propertyType.is_empty() else "[color=yellow]%s:[/color] %s\n" % [propertyName + " " +  str(propertyReturn), propertyValue]

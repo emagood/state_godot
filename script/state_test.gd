@@ -4,7 +4,7 @@ esta es la maquina de estados
 
 extends Control
 @onready var state_machine_node = $Node
-
+var pool = 10
 func _ready():
 	
 	state_machine_node.change_state("Idle")
