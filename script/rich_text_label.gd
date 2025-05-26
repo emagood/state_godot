@@ -31,27 +31,30 @@ func update_text():
 
 	var thisScript: GDScript = $"../../AnimationPlayer".get_script()
 	for propertyInfo in thisScript.get_method_list():
+		prints("get metodos")
 		var propertyName : String = propertyInfo.name
 		var propertyValue = $"../../AnimationPlayer".get(propertyName)
 		var propertyType = propertyInfo.args
 		var propertyReturn = propertyInfo.default_args
 		text += "[color=green]%s:[/color] %s\n" % [propertyName + " " +  str(propertyReturn), propertyValue ,] if !propertyType.is_empty() else "[color=yellow]%s:[/color] %s\n" % [propertyName + " " +  str(propertyReturn), propertyValue]
+		#prints(text)
 		
 		
 		#prints(propertyInfo.args)
 	for propertyInfo in thisScript.get_script_property_list():
+		
 		var propertyName : String = propertyInfo.name
 		var propertyValue = $"../..".get(propertyName)
 		var propertyType = propertyInfo.usage
 		text += "[color=red]%s:[/color] %s\n" % [propertyName, propertyValue] if propertyType == 4096 else "[color=CYAN]%s:[/color] %s\n" % [propertyName, propertyValue]
-		
+		prints("properti lisrt", propertyName, propertyValue)
 		
 	for propertyInfo in thisScript.get_property_list():
 		var propertyName : String = propertyInfo.name
 		var propertyValue = $"../..".get(propertyName)
 		var propertyType = propertyInfo.usage
 		text += "[color=green]%s:[/color] %s\n" % [propertyName, propertyValue] if propertyType == 4096 else "[color=CORNFLOWER_BLUE]%s:[/color] %s\n" % [propertyName, propertyValue]
-		
+	
 		
 	for propertyInfo in thisScript.get_signal_list():
 		var propertyName : String = propertyInfo.name
